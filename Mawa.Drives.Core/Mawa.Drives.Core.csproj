@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Mawa.Drives</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\TempDeskTop\proj\MyLibraries\.Net\mawa libs\MawaLibsMainProject\00\MawaLibsMainSolution\Mawa.IO\Mawa.IO.csproj" />
+    <ProjectReference Include="..\..\..\TempDeskTop\proj\MyLibraries\.Net\mawa libs\MawaLibsMainProject\00\MawaLibsMainSolution\Mawa\Mawa.csproj" />
+  </ItemGroup>
+
+</Project>
