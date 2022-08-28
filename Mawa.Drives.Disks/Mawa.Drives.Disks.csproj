@@ -5,11 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controls\" />
+    <ProjectReference Include="..\..\..\TempDeskTop\proj\MyLibraries\.Net\mawa libs\HashProject\00\HashSolution\Mawa.Hash\Mawa.Hash.csproj" />
+    <ProjectReference Include="..\..\..\TempDeskTop\proj\MyLibraries\.Net\mawa libs\MawaAppMeProject\00\MawaAppMeSolution\AppMe.NetStandard\AppMe.NetStandard.csproj" />
+    <ProjectReference Include="..\Mawa.Drives.Core\Mawa.Drives.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mawa.Drives.Core\Mawa.Drives.Core.csproj" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 
 </Project>
