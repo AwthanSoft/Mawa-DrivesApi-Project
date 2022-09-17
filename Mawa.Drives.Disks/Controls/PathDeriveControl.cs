@@ -105,7 +105,7 @@ namespace Mawa.Drives.Disks.Controls
                     DriveFileId = file.FullName,
                     ParentDriveId = folderId,
                     Name = file.Name,
-                    DriveSize = await DirectoryHelper.GetDirectorySizeAsync(file.FullName),
+                    DriveSize = await DirectoryHelper.GetDirectorySizeAsync(file.FullName, false),
                     //MimeType = MimeTypeMap.d,
                     IsInDrive = true
 
@@ -224,7 +224,7 @@ namespace Mawa.Drives.Disks.Controls
                 DriveFileId = driveFile.FullName,
                 ParentDriveId = (driveFile.Parent != null) ? driveFile.Parent.FullName : null,
                 Name = driveFile.Name,
-                DriveSize = await DirectoryHelper.GetDirectorySizeAsync(driveFile.FullName),
+                DriveSize = await DirectoryHelper.GetDirectorySizeAsync(driveFile.FullName, false),
                 //MimeType = driveFile.MimeType,
                 IsInDrive = true
             };
@@ -259,7 +259,7 @@ namespace Mawa.Drives.Disks.Controls
 
         public Task<FileDriveStructFile> UploadFileToDriveAsync(string srcFilePath, string mimeType, string ParentId, CancellationToken cancellationToken)
         {
-            return UploadFileToDriveAsync(srcFilePath, mimeType, ParentId, cancellationToken);
+            return _UploadFileToDriveAsync(srcFilePath, mimeType, ParentId, cancellationToken);
         }
         async Task<FileDriveStructFile> _UploadFileToDriveAsync(string srcFilePath, string mimeType, string ParentId, CancellationToken cancellationToken)
         {
@@ -306,14 +306,6 @@ namespace Mawa.Drives.Disks.Controls
         #endregion
 
 
-
-
-
-
-
-
-
-
         #region Access
 
         public async Task<bool> AccessServiceAsync()
@@ -334,17 +326,16 @@ namespace Mawa.Drives.Disks.Controls
             PathDriveAbout result = null;
             if (!string.IsNullOrEmpty(path))
             {
-                result = new PathDriveAbout()
-                {
-                    TargetPath = path,
-                    IsReady = false,
-                    DriveType = DriveType.Unknown,
-                };
                 //Check is Hard
                 if (Directory.Exists(path))
                 {
+                    result = new PathDriveAbout()
+                    {
+                        TargetPath = path,
+                        IsReady = false,
+                        DriveType = DriveType.Unknown,
+                    };
                     result.IsReady = true;
-                    result.PathUsedSize = await DirectoryHelper.GetDirectorySizeAsync(path);
 
                     //Drive
                     var root = Directory.GetDirectoryRoot(path);
@@ -371,6 +362,18 @@ namespace Mawa.Drives.Disks.Controls
                     if (driveInfo.Name == path)
                     {
                         result.isRootPath = true;
+                    }
+
+                    //size
+                    {
+                        if (result.isRootPath && driveInfo != null)
+                        {
+                            result.PathUsedSize = (driveInfo.TotalSize - driveInfo.AvailableFreeSpace);
+                        }
+                        else
+                        {
+                            result.PathUsedSize = await DirectoryHelper.GetDirectorySizeAsync(path, false);
+                        }
                     }
                 }
             }

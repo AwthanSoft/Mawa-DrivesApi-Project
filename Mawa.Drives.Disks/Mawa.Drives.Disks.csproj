@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Copyright>© 2022 AwthanSoft</Copyright>
+    <RepositoryUrl>https://github.com/AwthanSoft/Mawa-DrivesApi-Project</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <Version>22.9.7</Version>
+    <Authors>AwthanSoft</Authors>
+    <Product>Mawa Drives Disks</Product>
+    <AssemblyVersion>22.9.7.1</AssemblyVersion>
+    <FileVersion>22.9.7.1</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
