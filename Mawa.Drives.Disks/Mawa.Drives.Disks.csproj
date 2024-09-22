@@ -2,18 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Copyright>© 2022 AwthanSoft</Copyright>
+    <Copyright>© 2022-2024 AwthanSoft</Copyright>
     <RepositoryUrl>https://github.com/AwthanSoft/Mawa-DrivesApi-Project</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
-    <Version>22.9.7</Version>
+    <Version>24.09.16</Version>
     <Authors>AwthanSoft</Authors>
     <Product>Mawa Drives Disks</Product>
-    <AssemblyVersion>22.9.7.1</AssemblyVersion>
-    <FileVersion>22.9.7.1</FileVersion>
+    <AssemblyVersion>24.09.16.0</AssemblyVersion>
+    <FileVersion>24.09.16.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\TempDeskTop\proj\MyLibraries\.Net\mawa libs\HashProject\00\HashSolution\Mawa.Hash\Mawa.Hash.csproj" />
     <ProjectReference Include="..\..\MawaAppMeSolution\AppMe.NetStandard\AppMe.NetStandard.csproj" />
     <ProjectReference Include="..\Mawa.Drives.Core\Mawa.Drives.Core.csproj" />
   </ItemGroup>
