@@ -39,7 +39,7 @@ namespace Mawa.Drives.Files
         #region initial
         public DriveFileType driveFileType { get; set; }
 
-        public DriveStructFile (DriveFileType driveFileType)
+        public DriveStructFile(DriveFileType driveFileType)
         {
             this.driveFileType = driveFileType;
         }
@@ -54,7 +54,7 @@ namespace Mawa.Drives.Files
 
         public string DriveFileId { get; set; }
         public string ParentDriveId { get; set; }
-      
+
 
         public string MimeType { get; set; }
 
@@ -85,6 +85,6 @@ namespace Mawa.Drives.Files
 
         #endregion
 
-    }   
+    }
 
 }

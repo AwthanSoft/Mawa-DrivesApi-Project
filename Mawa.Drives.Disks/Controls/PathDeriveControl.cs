@@ -1,12 +1,14 @@
-﻿using AppMe.MimeTypes;
-using Mawa.Drives.Files;
-using Mawa.IO.Helpers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+
+using AppMe.MimeTypes;
+
+using Mawa.Drives.Files;
+using Mawa.IO.Helpers;
 
 namespace Mawa.Drives.Disks.Controls
 {

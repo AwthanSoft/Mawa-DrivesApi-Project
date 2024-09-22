@@ -19,7 +19,7 @@
 //        #endregion
 
 //        #region BaseInfo
-        
+
 //        string _DriveFileId;
 //        public string DriveFileId
 //        {
@@ -138,7 +138,7 @@
 //            OnPropertyChanged(nameof(ParentDriveId));
 //            OnPropertyChanged(nameof(MimeType));
 //            OnPropertyChanged(nameof(Name));
-            
+
 //            OnPropertyChanged(nameof(DriveSize));
 //            OnPropertyChanged(nameof(LocalSize));
 

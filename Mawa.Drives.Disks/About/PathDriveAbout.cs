@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-namespace Mawa.Drives.Disks
+﻿namespace Mawa.Drives.Disks
 {
     public interface IPathDriveAbout : About.IDriveAboutCore
     {
@@ -34,7 +31,7 @@ namespace Mawa.Drives.Disks
         public System.IO.DriveType DriveType { get; set; }
         public string RootDirectory { get; set; }
         public string DriveFormat { get; set; }
-        
+
         //Drive
         public long AvailableFreeSpace { get; set; }
         public long TotalFreeSpace { get; set; }

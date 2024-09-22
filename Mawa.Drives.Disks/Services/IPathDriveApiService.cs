@@ -1,7 +1,8 @@
-﻿using Mawa.Drives.Files;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+
+using Mawa.Drives.Files;
 
 namespace Mawa.Drives.Disks
 {
